@@ -10,7 +10,7 @@ namespace HelixStore.Application.Staffs.Manage
     public interface IManageStaffService
     {
         Staff Create(Staff staff);
-        bool Update(int id, Staff staff);
+        Staff Update(int id, Staff staff);
         Staff Delete(int id);
         List<Staff> GetAll();
         Staff FindByPhone(string phone);

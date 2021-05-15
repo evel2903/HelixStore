@@ -10,9 +10,9 @@ namespace HelixStore.Application.Staffs.Manage
     public class ManageStaffService: IManageStaffService
     {
         private readonly HelixStoreContext _context;
-        public ManageStaffService(HelixStoreContext context)
+        public ManageStaffService()
         {
-            _context = context;
+            _context = new HelixStoreContext();
         }
 
         public Staff Create(Staff staff)
@@ -21,10 +21,10 @@ namespace HelixStore.Application.Staffs.Manage
             _context.Staffs.Add(staff);
             _context.SaveChanges();
 
-            return staff;
+            return _context.Staffs.ToList().Last();
         }
 
-        public bool Update(int id, Staff staff)
+        public Staff Update(int id, Staff staff)
         {
             var st = _context.Staffs
                 .ToList()
@@ -32,7 +32,7 @@ namespace HelixStore.Application.Staffs.Manage
 
             if(st == null)
             {
-                return false;
+                return null;
             }
             st.StaffFullname = staff.StaffFullname;
             st.StaffGender = staff.StaffGender;
@@ -43,7 +43,7 @@ namespace HelixStore.Application.Staffs.Manage
 
             _context.SaveChanges();
 
-            return true;
+            return st;
 
     }
 
@@ -81,6 +81,8 @@ namespace HelixStore.Application.Staffs.Manage
         {
             var staffs = _context.Staffs
                 .ToList();
+
+            staffs.ForEach(s => s.StaffPassword = "");
 
             if(staffs == null)
             {
