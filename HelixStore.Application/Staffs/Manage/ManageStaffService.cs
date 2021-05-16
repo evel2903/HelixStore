@@ -21,7 +21,7 @@ namespace HelixStore.Application.Staffs.Manage
             _context.Staffs.Add(staff);
             _context.SaveChanges();
 
-            return _context.Staffs.ToList().Last();
+            return _context.Staffs.LastOrDefault();
         }
 
         public Staff Update(int id, Staff staff)
