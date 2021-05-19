@@ -1,5 +1,4 @@
-﻿
-using HelixStore.WinForm.Forms;
+﻿using HelixStore.WinForm.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

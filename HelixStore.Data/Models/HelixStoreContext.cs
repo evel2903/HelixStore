@@ -24,7 +24,6 @@ namespace HelixStore.Data.Models
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<InvoiceDetail> InvoiceDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductImg> ProductImgs { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
@@ -239,6 +238,10 @@ namespace HelixStore.Data.Models
                     .HasMaxLength(100)
                     .HasColumnName("product_description");
 
+                entity.Property(e => e.ProductImg)
+                    .HasMaxLength(100)
+                    .HasColumnName("product_img");
+
                 entity.Property(e => e.ProductName)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -255,23 +258,6 @@ namespace HelixStore.Data.Models
                     .HasForeignKey(d => d.ProductTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_product_product_type");
-            });
-
-            modelBuilder.Entity<ProductImg>(entity =>
-            {
-                entity.ToTable("product_img");
-
-                entity.Property(e => e.ProductImgId).HasColumnName("product_img_id");
-
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
-
-                entity.Property(e => e.ProductImgUrl).HasColumnName("product_img_url");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.ProductImgs)
-                    .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_product_img_product");
             });
 
             modelBuilder.Entity<ProductType>(entity =>

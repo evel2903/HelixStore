@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Customers.Public
+namespace HelixStore.Business.Customers.Public
 {
     public class PublicCustomerService:IPublicCustomerService
     {

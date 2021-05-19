@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HelixStore.Data.Models;
 
-namespace HelixStore.Application.Customers.Manage
+namespace HelixStore.Business.Customers.Manage
 {
     public interface IManageCustomerService
     {

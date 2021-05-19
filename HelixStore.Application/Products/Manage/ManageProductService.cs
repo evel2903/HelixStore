@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Products.Manage
+namespace HelixStore.Business.Products.Manage
 {
     public class ManageProductService:IManageProductService
     {
@@ -15,57 +15,46 @@ namespace HelixStore.Application.Products.Manage
             _context = new HelixStoreContext();
         }
 
-        public Product Create(Product product, List<ProductImg> imgs)
+        public Product Create(Product product)
         {
+            product.ProductId = 0;
             _context.Products.Add(product);
+            _context.SaveChanges();
+            return _context.Products.ToList().Last();
+        }
 
-            if(imgs != null)
+        public Product Update(int id, Product product)
+        {
+            var prd = _context.Products.First(p => p.ProductId == id);
+            if (prd == null)
             {
-                imgs.ForEach(img => _context.ProductImgs.Add(img));
+                return null;
             }
 
-            _context.SaveChanges();
-            return _context.Products.LastOrDefault();
+            prd.ProductName = product.ProductName;
+            prd.ProductPrice = product.ProductPrice;
+            prd.ProductDescription = product.ProductDescription;
+            prd.ProductTypeId = product.ProductTypeId;
+            prd.ProductImg = product.ProductImg;
 
+            _context.SaveChanges();
+            return prd;
         }
 
         public Product Delete(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
+            var product = _context.Products.First(p => p.ProductId == id);
             if(product == null)
             {
                 return null;
             }
-            var imgs = _context.ProductImgs.Where(p => p.ProductId == product.ProductId).ToList();
-            imgs.ForEach(i => _context.ProductImgs.Remove(i));
+
+            ClearInventoryDelivery(id);
+            ClearInventoryReceiving(id);
+
             _context.Products.Remove(product);
-
             _context.SaveChanges();
-
             return product;
-        }
-
-        public Product Update(int id, Product product, List<ProductImg> imgs)
-        {
-            var prd = _context.Products.FirstOrDefault(p => p.ProductId == id);
-
-            if(prd == null)
-            {
-                return null;
-            }
-            var listPrevImgs = _context.ProductImgs.Where(pi => pi.ProductId == id).ToList();
-
-            if(listPrevImgs != null)
-            {
-                listPrevImgs.ForEach(pi => _context.ProductImgs.Remove(pi));
-            }
-
-            if (imgs != null)
-            {
-                imgs.ForEach(img => _context.ProductImgs.Add(img));
-            }
-            _context.SaveChanges();
-            return prd;
 
         }
 
@@ -89,6 +78,8 @@ namespace HelixStore.Application.Products.Manage
             return UpdateProductAmount(product_id);
         }
 
+
+
         private Product UpdateProductAmount(int product_id)
         {
             var irv = _context.InventoryReceivingVouchers.Where(i => i.ProductId == product_id).ToList(); //Nhap
@@ -107,5 +98,34 @@ namespace HelixStore.Application.Products.Manage
             return product;
 
         }
+
+        private void ClearInventoryReceiving(int product_id)
+        {
+            var irs = _context.InventoryReceivingVouchers.Where(ir => ir.ProductId == product_id).ToList();
+
+            if(irs == null)
+            {
+                return;
+            }
+            irs.ForEach(ir => _context.InventoryReceivingVouchers.Remove(ir));
+
+            _context.SaveChanges();
+
+        }
+
+        private void ClearInventoryDelivery(int product_id)
+        {
+            var ids = _context.InventoryDeliveryVouchers.Where(ir => ir.ProductId == product_id).ToList();
+
+            if (ids == null)
+            {
+                return;
+            }
+            ids.ForEach(id => _context.InventoryDeliveryVouchers.Remove(id));
+
+            _context.SaveChanges();
+
+        }
+
     }
 }

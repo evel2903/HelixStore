@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Staffs.Public
+namespace HelixStore.Business.Staffs.Public
 {
     public interface IPublicStaffService
     {

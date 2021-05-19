@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Customers.Manage
+namespace HelixStore.Business.Customers.Manage
 {
     public class ManageCustomerService : IManageCustomerService
     {
