@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Products.Manage
+namespace HelixStore.Business.Products.Manage
 {
     public interface IManageProductService
     {
-        Product Create(Product product, List<ProductImg> imgs);
+        Product Create(Product product);
 
-        Product Update(int id, Product product, List<ProductImg> imgs);
+        Product Update(int id, Product product);
+
         Product Delete(int id);
+
+        Product InventoryReceiving(int amount, int product_id);
     }
 }

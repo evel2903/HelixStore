@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixStore.Data", "HelixStore.Data\HelixStore.Data.csproj", "{3D17F40E-EDF8-46CD-9A08-B7140036A7EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelixStore.Data", "HelixStore.Data\HelixStore.Data.csproj", "{3D17F40E-EDF8-46CD-9A08-B7140036A7EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixStore.Application", "HelixStore.Application\HelixStore.Application.csproj", "{41C62471-A8A9-4150-8F28-DA243EBB7A11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelixStore.Business", "HelixStore.Application\HelixStore.Business.csproj", "{41C62471-A8A9-4150-8F28-DA243EBB7A11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixStore.WinForm", "HelixStore.WinForm\HelixStore.WinForm.csproj", "{FA38BC0C-99B9-45F1-B60E-96D4AE44B392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelixStore.WinForm", "HelixStore.WinForm\HelixStore.WinForm.csproj", "{FA38BC0C-99B9-45F1-B60E-96D4AE44B392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixStore.WebApi", "HelixStore.WebApi\HelixStore.WebApi.csproj", "{0FA05371-668E-42DE-AA64-976019543BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelixStore.WebApi", "HelixStore.WebApi\HelixStore.WebApi.csproj", "{0FA05371-668E-42DE-AA64-976019543BEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

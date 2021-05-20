@@ -12,7 +12,6 @@ namespace HelixStore.Data.Models
             InventoryDeliveryVouchers = new HashSet<InventoryDeliveryVoucher>();
             InventoryReceivingVouchers = new HashSet<InventoryReceivingVoucher>();
             InvoiceDetails = new HashSet<InvoiceDetail>();
-            ProductImgs = new HashSet<ProductImg>();
         }
 
         public int ProductId { get; set; }
@@ -21,11 +20,11 @@ namespace HelixStore.Data.Models
         public decimal ProductPrice { get; set; }
         public string ProductDescription { get; set; }
         public int ProductTypeId { get; set; }
+        public string ProductImg { get; set; }
 
         public virtual ProductType ProductType { get; set; }
         public virtual ICollection<InventoryDeliveryVoucher> InventoryDeliveryVouchers { get; set; }
         public virtual ICollection<InventoryReceivingVoucher> InventoryReceivingVouchers { get; set; }
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }
-        public virtual ICollection<ProductImg> ProductImgs { get; set; }
     }
 }

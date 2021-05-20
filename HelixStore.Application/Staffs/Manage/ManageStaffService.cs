@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Staffs.Manage
+namespace HelixStore.Business.Staffs.Manage
 {
     public class ManageStaffService: IManageStaffService
     {
@@ -17,28 +17,38 @@ namespace HelixStore.Application.Staffs.Manage
 
         public Staff Create(Staff staff)
         {
-            staff.StaffPassword = null;
+            staff.StaffId = 0;
+            
+            if(staff.StaffPassword == "")
+            {
+                staff.StaffPassword = CreateMd5("123456");
+            }
+            else
+            {
+                staff.StaffPassword = CreateMd5(staff.StaffPassword);
+            }
+            
             _context.Staffs.Add(staff);
             _context.SaveChanges();
 
-            return _context.Staffs.LastOrDefault();
+            return _context.Staffs.ToList().Last();
         }
 
         public Staff Update(int id, Staff staff)
         {
             var st = _context.Staffs
-                .ToList()
-                .FirstOrDefault(s => s.StaffId == id);
+                .First(s => s.StaffId == id);
 
             if(st == null)
             {
                 return null;
             }
+
+            st.StaffPassword = CreateMd5(staff.StaffPassword);
             st.StaffFullname = staff.StaffFullname;
             st.StaffGender = staff.StaffGender;
             st.StaffAddress = staff.StaffAddress;
             st.StaffPhone = staff.StaffPhone;
-            st.StaffPassword = staff.StaffPassword;
             st.RoleId = staff.RoleId;
 
             _context.SaveChanges();
@@ -72,7 +82,6 @@ namespace HelixStore.Application.Staffs.Manage
             {
                 return null;
             }
-            staff.StaffPassword = "";
             return staff;
 
         }
@@ -82,14 +91,25 @@ namespace HelixStore.Application.Staffs.Manage
             var staffs = _context.Staffs
                 .ToList();
 
-            staffs.ForEach(s => s.StaffPassword = "");
-
             if(staffs == null)
             {
                 return null;
             }
 
             return staffs;
+        }
+
+        private string CreateMd5(string s)
+        {
+            using (var provider = System.Security.Cryptography.MD5.Create())
+            {
+                StringBuilder builder = new StringBuilder();
+
+                foreach (byte b in provider.ComputeHash(Encoding.UTF8.GetBytes(s)))
+                    builder.Append(b.ToString("x2").ToLower());
+
+                return builder.ToString();
+            }
         }
 
     }

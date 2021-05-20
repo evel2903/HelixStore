@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelixStore.Application.Customers.Public
+namespace HelixStore.Business.Customers.Public
 {
     public interface IPublicCustomerService
     {
-        Customer FindByPhoneAndPassword(string phone, string password);
-
-        Customer ChangePassword(int id, string currentP, string newP);
+        Customer Create(Customer customer);
+        List<DeliveryAddress> GetDeliveryAddressByCustomerId(int id);
+        DeliveryAddress CreateDeliveryAddressByCustomerId(DeliveryAddress deliveryAddress);
+        DeliveryAddress GetDeliveryAddressByrId(int id);
     }
 }
