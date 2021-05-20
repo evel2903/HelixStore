@@ -9,30 +9,21 @@ namespace HelixStore.Business.Customers.Manage
 {
     public class ManageCustomerService : IManageCustomerService
     {
-        public Customer Create(Customer customer)
+        private readonly HelixStoreContext _context;
+        public ManageCustomerService()
         {
-            throw new NotImplementedException();
+            _context = new HelixStoreContext();
         }
-
-        public Customer Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Customer FindByPhone(string phone)
         {
-            throw new NotImplementedException();
+            var customer = _context.Customers.FirstOrDefault(c => c.CustomerPhone == phone);
+            return customer == null ? null : customer;
         }
 
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            var customers = _context.Customers.ToList();
+            return customers == null ? null : customers;
         }
-
-        public Customer Update(int id, Customer customer)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

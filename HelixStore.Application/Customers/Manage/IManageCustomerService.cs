@@ -9,9 +9,6 @@ namespace HelixStore.Business.Customers.Manage
 {
     public interface IManageCustomerService
     {
-        Customer Create(Customer customer);
-        Customer Update(int id, Customer customer);
-        Customer Delete(int id);
         List<Customer> GetAll();
         Customer FindByPhone(string phone);
     }

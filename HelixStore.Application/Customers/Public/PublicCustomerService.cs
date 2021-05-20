@@ -15,26 +15,35 @@ namespace HelixStore.Business.Customers.Public
             _context = new HelixStoreContext();
         }
 
-        public Customer ChangePassword(int id, string currentP, string newP)
+        public Customer Create(Customer customer)
         {
-            var customer = _context.Customers.Where(c => c.CustomerId == id && c.CustomerPassword == CreateMd5(currentP)).FirstOrDefault();
-            if(customer == null)
-            {
-                return null;
-            }
-            customer.CustomerPassword = CreateMd5(newP);
+            customer.CustomerPassword = CreateMd5("123456");
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
 
-            return customer;
-
+            return _context.Customers.ToList().Last();
         }
 
-        public Customer FindByPhoneAndPassword(string phone, string password)
+        public DeliveryAddress CreateDeliveryAddressByCustomerId(DeliveryAddress deliveryAddress)
         {
-            var customer = _context.Customers.Where(c => c.CustomerPhone == phone && c.CustomerPassword == CreateMd5(password)).FirstOrDefault();
-
-            return customer == null ? null : customer;
+            _context.DeliveryAddresses.Add(deliveryAddress);
+            _context.SaveChanges();
+            return _context.DeliveryAddresses.ToList().Last();
         }
-       
+
+        public List<DeliveryAddress> GetDeliveryAddressByCustomerId(int id)
+        {
+            var list = _context.DeliveryAddresses.Where(da => da.CustomerId == id).ToList();
+
+            return list == null ? null : list;
+        }
+
+        public DeliveryAddress GetDeliveryAddressByrId(int id)
+        {
+            var da = _context.DeliveryAddresses.FirstOrDefault(d => d.DeliveryAddressId == id);
+            return da == null ? null : da;
+        }
+
         private string CreateMd5(string s)
         {
             using (var provider = System.Security.Cryptography.MD5.Create())
@@ -47,7 +56,5 @@ namespace HelixStore.Business.Customers.Public
                 return builder.ToString();
             }
         }
-
-
     }
 }

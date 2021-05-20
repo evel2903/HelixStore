@@ -1,4 +1,5 @@
-﻿using HelixStore.WinForm.Forms;
+﻿using HelixStore.Data.Models;
+using HelixStore.WinForm.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,25 @@ namespace HelixStore.WinForm
     public partial class Index : Form
     {
         private Form currentLayoutForm;
+        private Staff _staff;
 
-        public Index()
+        public Index(Staff staffLogin)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            txt_userLogin.Text = staffLogin.StaffFullname;
+            txt_userLoginRole.Text = staffLogin.RoleId == 0 ? "Admin" : "Staff";
+
+            if(staffLogin.RoleId != 0)
+            {
+                btn_products.Visible = false;
+                btn_staffs.Visible = false;
+            }
+            _staff = staffLogin;
+
+            btn_home.Visible = false;
+            RenderMainLayout(new InvoiceForm(_staff));
+
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -44,18 +59,19 @@ namespace HelixStore.WinForm
         private void btn_invoice_Click(object sender, EventArgs e)
         {
             ActiveButton(btn_invoice);
-            RenderMainLayout(new InvoiceForm());
+            RenderMainLayout(new InvoiceForm(_staff));
         }
 
-        private void btn_customer_Click(object sender, EventArgs e)
+        private void btn_order_Click(object sender, EventArgs e)
         {
-            ActiveButton(btn_customer);
-            RenderMainLayout(new CustomersForm());
+            ActiveButton(btn_order);
+            RenderMainLayout(new OrdersForm());
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
             ActiveButton(btn_logout);
+            Application.Restart();
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -71,7 +87,7 @@ namespace HelixStore.WinForm
             btn_staffs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
             btn_invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
             btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
-            btn_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
+            btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
             //Active button Clicked
             btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(241)))), ((int)(((byte)(247)))));
         }

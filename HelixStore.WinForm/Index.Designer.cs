@@ -30,6 +30,7 @@ namespace HelixStore.WinForm
         private void InitializeComponent()
         {
             this.Left_Sidebar = new System.Windows.Forms.Panel();
+            this.btn_order = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_invoice = new System.Windows.Forms.Button();
             this.btn_staffs = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace HelixStore.WinForm
             this.txt_userLogin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Main_Content = new System.Windows.Forms.Panel();
-            this.btn_customer = new System.Windows.Forms.Button();
             this.Left_Sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,7 +51,7 @@ namespace HelixStore.WinForm
             // Left_Sidebar
             // 
             this.Left_Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
-            this.Left_Sidebar.Controls.Add(this.btn_customer);
+            this.Left_Sidebar.Controls.Add(this.btn_order);
             this.Left_Sidebar.Controls.Add(this.btn_logout);
             this.Left_Sidebar.Controls.Add(this.btn_invoice);
             this.Left_Sidebar.Controls.Add(this.btn_staffs);
@@ -63,6 +63,26 @@ namespace HelixStore.WinForm
             this.Left_Sidebar.Name = "Left_Sidebar";
             this.Left_Sidebar.Size = new System.Drawing.Size(200, 768);
             this.Left_Sidebar.TabIndex = 0;
+            // 
+            // btn_order
+            // 
+            this.btn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
+            this.btn_order.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_order.FlatAppearance.BorderSize = 0;
+            this.btn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_order.Image = global::HelixStore.WinForm.Properties.Resources.gg_menu_right;
+            this.btn_order.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_order.Location = new System.Drawing.Point(0, 441);
+            this.btn_order.Name = "btn_order";
+            this.btn_order.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.btn_order.Size = new System.Drawing.Size(200, 68);
+            this.btn_order.TabIndex = 6;
+            this.btn_order.Text = "Order";
+            this.btn_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_order.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_order.UseVisualStyleBackColor = false;
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // btn_logout
             // 
@@ -230,26 +250,6 @@ namespace HelixStore.WinForm
             this.Main_Content.Size = new System.Drawing.Size(1240, 768);
             this.Main_Content.TabIndex = 1;
             // 
-            // btn_customer
-            // 
-            this.btn_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
-            this.btn_customer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_customer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_customer.FlatAppearance.BorderSize = 0;
-            this.btn_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_customer.Image = global::HelixStore.WinForm.Properties.Resources.user;
-            this.btn_customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_customer.Location = new System.Drawing.Point(0, 441);
-            this.btn_customer.Name = "btn_customer";
-            this.btn_customer.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            this.btn_customer.Size = new System.Drawing.Size(200, 68);
-            this.btn_customer.TabIndex = 6;
-            this.btn_customer.Text = "Customers";
-            this.btn_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customer.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_customer.UseVisualStyleBackColor = false;
-            this.btn_customer.Click += new System.EventHandler(this.btn_customer_Click);
-            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -285,7 +285,7 @@ namespace HelixStore.WinForm
         private System.Windows.Forms.Button btn_products;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btn_customer;
+        private System.Windows.Forms.Button btn_order;
     }
 }
 

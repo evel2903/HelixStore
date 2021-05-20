@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <Folder Include="asset\imgs\" />
-    <Folder Include="UserControl\" />
   </ItemGroup>
 
   <ItemGroup>

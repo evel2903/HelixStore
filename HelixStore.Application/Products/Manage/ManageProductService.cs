@@ -78,6 +78,26 @@ namespace HelixStore.Business.Products.Manage
             return UpdateProductAmount(product_id);
         }
 
+        public Product InventoryDelivery(int amount, int product_id)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.ProductId == product_id);
+            if (product == null)
+            {
+                return null;
+            }
+            InventoryDeliveryVoucher idv = new InventoryDeliveryVoucher();
+            idv.IdvAmount = amount;
+            idv.IdvDate = DateTime.Now;
+            idv.ProductId = product_id;
+
+            _context.InventoryDeliveryVouchers.Add(idv);
+            _context.SaveChanges();
+
+
+
+            return UpdateProductAmount(product_id);
+        }
+
 
 
         private Product UpdateProductAmount(int product_id)

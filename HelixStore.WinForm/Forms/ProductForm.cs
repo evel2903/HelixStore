@@ -22,7 +22,7 @@ namespace HelixStore.WinForm.Forms
         private PublicProductService pulicService = new PublicProductService();
         private List<ProductType> productTypes;
         private readonly string dataSrcPath = @"C:\Users\evell\Desktop\2-2020-2021\XDPMPL\HelixStore\HelixStore.Data\Images\";
-        private ImageSave imageSave;
+        private ImageSave imageSave = new ImageSave();
 
         public ProductForm()
         {
@@ -121,6 +121,7 @@ namespace HelixStore.WinForm.Forms
                     {
                        
                         Image i = Image.FromFile(dataSrcPath + product.ProductId + @"\" + product.ProductImg);
+                        imageSave.fileName = product.ProductImg;
                         product_img.Image = i;
                     }
                 }
