@@ -8,4 +8,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStore.Application\HelixStore.Business.csproj" />
+    <ProjectReference Include="..\HelixStore.Data\HelixStore.Data.csproj" />
+  </ItemGroup>
+
 </Project>
