@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/home/hone.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index.html" class="navbar__logo">HeliX</a>
+
+        <div class="navbar__nav nav">
+
+            <div class="dropdown">
+                <button href="#" class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bx-menu-alt-left dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Products</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./views/products/smartphone.html" class="dropdown__menu__item">
+                        <i class='bx bx-mobile-alt dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartphone</span>
+                    </a>
+                    <a href="./views/products/laptop.html" class="dropdown__menu__item">
+                        <i class='bx bx-laptop  dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Laptop</span>
+                    </a>
+                    <a href="./views/products/tablet.html" class="dropdown__menu__item">
+                        <i class='bx bx-tab dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Tablet</span>
+                    </a>
+                    <a href="./views/products/smartwatch.html" class="dropdown__menu__item">
+                        <i class='bx bxs-watch dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartwatch</span>
+                    </a>
+                    <a href="./views/products/accessories.html" class="dropdown__menu__item">
+                        <i class='bx bx-headphone dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Accessories</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bxs-user dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Account</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./views/account/signup.html" class="dropdown__menu__item" id="signup--link">
+                        <i class='bx bxs-user-plus dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Signup</span>
+                    </a>
+                    <a href="./views/account/login.html" class="dropdown__menu__item" id="login--link">
+                        <i class='bx bxs-log-in dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Login</span>
+                    </a>
+                    <a href="./views/account/profile.html" class="dropdown__menu__item" id="detail--link">
+                        <i class='bx bxs-user-detail dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Profile</span>
+                    </a>
+                    <a class="dropdown__menu__item" id="logout--link">
+                        <i class='bx bxs-log-out dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Logout</span>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <a href="./cart.html" class="nav__link" id="cart--btn">
+                <i class='bx bx-cart-alt nav__link__icon'><span id="cart--amount">0</span></i>
+                <span class="nav__link__text">Cart</span>
+            </a>
+
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="slider">
+            <div class="slider__item">
+                <img src="/assets/img/ip12.jpg" alt="slider__item__img">
+                <div class="slider__item__details">
+                    <h1>
+                        Iphone 12
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique accusamus asperiores
+                        aliquid
+                        totam ut! Ullam labore voluptate voluptatibus deleniti quidem similique quo, eos fuga officia ut
+                        sunt asperiores recusandae et ad eligendi corporis nobis quod in quae, iusto necessitatibus
+                        quis.
+                        Veritatis numquam eaque, delectus iste odio laborum sed praesentium. Veniam, suscipit! Esse
+                        perferendis facere necessitatibus! Beatae nisi vel qui necessitatibus repudiandae, pariatur rem
+                        modi
+                        esse est consequuntur tempora. Dolorum, nostrum corrupti exercitationem ut, neque sunt mollitia
+                        reprehenderit rerum aspernatur qui quaerat quia. Numquam consequuntur itaque ullam totam enim
+                        rem
+                        beatae quae suscipit accusantium officiis alias possimus consequatur, omnis magni!
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider__item">
+                <img src="/assets/img/MacBook-Pro-M1-.jpg" alt="slider__item__img">
+                <div class="slider__item__details">
+                    <h1>
+                        MacBook Pro M1
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique accusamus asperiores
+                        aliquid
+                        totam ut! Ullam labore voluptate voluptatibus deleniti quidem similique quo, eos fuga officia ut
+                        sunt asperiores recusandae et ad eligendi corporis nobis quod in quae, iusto necessitatibus
+                        quis.
+                        Veritatis numquam eaque, delectus iste odio laborum sed praesentium. Veniam, suscipit! Esse
+                        perferendis facere necessitatibus! Beatae nisi vel qui necessitatibus repudiandae, pariatur rem
+                        modi
+                        esse est consequuntur tempora. Dolorum, nostrum corrupti exercitationem ut, neque sunt mollitia
+                        reprehenderit rerum aspernatur qui quaerat quia. Numquam consequuntur itaque ullam totam enim
+                        rem
+                        beatae quae suscipit accusantium officiis alias possimus consequatur, omnis magni!
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider__item">
+                <img src="/assets/img/ipad-pro.jpg" alt="slider__item__img">
+                <div class="slider__item__details">
+                    <h1>
+                        Ipad Pro 12.9
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique accusamus asperiores
+                        aliquid
+                        totam ut! Ullam labore voluptate voluptatibus deleniti quidem similique quo, eos fuga officia ut
+                        sunt asperiores recusandae et ad eligendi corporis nobis quod in quae, iusto necessitatibus
+                        quis.
+                        Veritatis numquam eaque, delectus iste odio laborum sed praesentium. Veniam, suscipit! Esse
+                        perferendis facere necessitatibus! Beatae nisi vel qui necessitatibus repudiandae, pariatur rem
+                        modi
+                        esse est consequuntur tempora. Dolorum, nostrum corrupti exercitationem ut, neque sunt mollitia
+                        reprehenderit rerum aspernatur qui quaerat quia. Numquam consequuntur itaque ullam totam enim
+                        rem
+                        beatae quae suscipit accusantium officiis alias possimus consequatur, omnis magni!
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider__item">
+                <img src="/assets/img/apple-watch.jpg" alt="slider__item__img">
+                <div class="slider__item__details">
+                    <h1>
+                        Apple Watch 6
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique accusamus asperiores
+                        aliquid
+                        totam ut! Ullam labore voluptate voluptatibus deleniti quidem similique quo, eos fuga officia ut
+                        sunt asperiores recusandae et ad eligendi corporis nobis quod in quae, iusto necessitatibus
+                        quis.
+                        Veritatis numquam eaque, delectus iste odio laborum sed praesentium. Veniam, suscipit! Esse
+                        perferendis facere necessitatibus! Beatae nisi vel qui necessitatibus repudiandae, pariatur rem
+                        modi
+                        esse est consequuntur tempora. Dolorum, nostrum corrupti exercitationem ut, neque sunt mollitia
+                        reprehenderit rerum aspernatur qui quaerat quia. Numquam consequuntur itaque ullam totam enim
+                        rem
+                        beatae quae suscipit accusantium officiis alias possimus consequatur, omnis magni!
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider__item">
+                <img src="/assets/img/AirPods-Pro.jpg" alt="slider__item__img">
+                <div class="slider__item__details">
+                    <h1>
+                        AirPods Pro
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique accusamus asperiores
+                        aliquid
+                        totam ut! Ullam labore voluptate voluptatibus deleniti quidem similique quo, eos fuga officia ut
+                        sunt asperiores recusandae et ad eligendi corporis nobis quod in quae, iusto necessitatibus
+                        quis.
+                        Veritatis numquam eaque, delectus iste odio laborum sed praesentium. Veniam, suscipit! Esse
+                        perferendis facere necessitatibus! Beatae nisi vel qui necessitatibus repudiandae, pariatur rem
+                        modi
+                        esse est consequuntur tempora. Dolorum, nostrum corrupti exercitationem ut, neque sunt mollitia
+                        reprehenderit rerum aspernatur qui quaerat quia. Numquam consequuntur itaque ullam totam enim
+                        rem
+                        beatae quae suscipit accusantium officiis alias possimus consequatur, omnis magni!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/menu.js"></script>
+
+</body>
+
+</html>

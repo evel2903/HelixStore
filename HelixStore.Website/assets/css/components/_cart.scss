@@ -1,0 +1,146 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "../utilities/keyframes";
+.cart {
+    width: 100%;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr;
+    }
+    &__item {
+        display: grid;
+        grid-template-areas:
+            "img img img amount del"
+            "img img img price price"
+            "name name name total total";
+
+        margin: 1rem;
+        padding: 1rem;
+
+        animation: flipYIn 700ms ease-in-out 500ms both;
+        transform-style: preserve-3d;
+
+        @extend %box-shadow;
+
+        &__img {
+            grid-area: img;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 10rem;
+                height: 15rem;
+                object-fit: cover;
+            }
+        }
+        &__name {
+            grid-area: name;
+            display: flex;
+            justify-content: start;
+            align-items: flex-end;
+            p {
+                font-size: 30px;
+                color: rgb(70, 70, 70);
+                text-transform: uppercase;
+                font-weight: 300;
+                text-align: start;
+            }
+        }
+        &__amount {
+            grid-area: amount;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & > input {
+                padding-left: 0.5rem;
+                height: 2rem;
+                outline: none;
+                border: none;
+                @extend %box-shadow;
+            }
+        }
+        &__price {
+            grid-area: price;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            & > span {
+                height: 2rem;
+                text-align: center;
+                line-height: 2rem;
+                @extend %box-shadow;
+            }
+        }
+        &__total {
+            grid-area: total;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & > span {
+                height: 2rem;
+                text-align: center;
+                line-height: 2rem;
+                @extend %box-shadow;
+            }
+        }
+        &__del {
+            grid-area: del;
+            button {
+                float: right;
+                width: 2rem;
+                height: 2rem;
+                background-color: #fff;
+                color: rgb(252, 66, 66);
+                border: none;
+                outline: none;
+                cursor: pointer;
+                &:hover {
+                    @extend %box-shadow-inset;
+                }
+                &:active {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+.cart__detail {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    &__item {
+        font-size: 24px;
+        color: rgb(70, 70, 70);
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: end;
+    }
+    button {
+        @extend %box-shadow;
+        padding: 0.5rem;
+        width: 10rem;
+        height: 2rem;
+        background-color: #fff;
+        color: rgb(0, 153, 94);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+            @extend %box-shadow-inset;
+            border-radius: 2rem;
+        }
+        &:active {
+            transform: scale(1.2);
+        }
+    }
+}

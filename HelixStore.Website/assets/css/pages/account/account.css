@@ -1,0 +1,145 @@
+/*------------------------------------------------------Color------------------------------------------------------*/
+/*------------------------------------------------------Color End------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint End------------------------------------------------------*/
+.content .form, .content .form__item__input, .content .form .control .form__item__control {
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content .form .control .form__item__control:hover {
+  background: #fff;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content .form .control .form__item__control:active {
+  border: 2px solid #fff;
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/*------------------------------------------------------Media Queries------------------------------------------------------*/
+/*------------------------------------------------------Media Queries End------------------------------------------------------*/
+/*------------------------------------------------------Color------------------------------------------------------*/
+/*------------------------------------------------------Color End------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint End------------------------------------------------------*/
+.content .form, .content .form__item__input, .content .form .control .form__item__control {
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content .form .control .form__item__control:hover {
+  background: #fff;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content .form .control .form__item__control:active {
+  border: 2px solid #fff;
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../../../img/MacBook-Pro-M1-.jpg);
+  background-size: cover;
+}
+
+.content .form {
+  padding: 2rem;
+}
+
+.content .form__title {
+  font-size: 30px;
+  color: #464646;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.content .form__item {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .form__item__icon {
+  margin-right: 1rem;
+}
+
+.content .form__item__input {
+  color: #666;
+  padding-left: 0.5rem;
+  height: 2.5rem;
+  width: 20rem;
+  border: none;
+  outline: none;
+}
+
+.content .form .gender .form__item__input {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.content .form .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.content .form .control .form__item__control {
+  height: 2.5rem;
+  width: 20rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.content .form .control .form__item__control:hover {
+  border-radius: 2.5rem;
+}
+
+.content .form .control .form__item__control:active {
+  border-radius: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+}
+/*# sourceMappingURL=account.css.map */
