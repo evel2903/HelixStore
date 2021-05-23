@@ -60,7 +60,7 @@ namespace HelixStore.Business.Customers.Public
         {
             var list = _context.DeliveryAddresses.Where(da => da.CustomerId == id).ToList();
 
-            return list == null ? null : list;
+            return list.Count == 0 ? null : list;
         }
 
         public DeliveryAddress GetDeliveryAddressByrId(int id)

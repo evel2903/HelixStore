@@ -14,6 +14,12 @@ namespace HelixStore.Business.Products.Public
         {
             _context = new HelixStoreContext();
         }
+        public List<Product> GetAll()
+        {
+            var prds = _context.Products.ToList();
+
+            return prds.Count == 0 ? null : prds;
+        }
         public Product GetProductById(int product_id)
         {
             var prd = _context.Products.FirstOrDefault(p => p.ProductId == product_id);

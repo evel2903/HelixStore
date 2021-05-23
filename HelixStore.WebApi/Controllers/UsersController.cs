@@ -29,5 +29,24 @@ namespace HelixStore.WebApi.Controllers
 
             return customer;
         }
+        [HttpGet("Address/{id}")]
+        public ActionResult<List<DeliveryAddress>> GetDeliveryAddressById(int id)
+        {
+            var address = _publicCustomerService.GetDeliveryAddressByCustomerId(id);
+            return address == null ? NotFound(): address;
+        }
+        [HttpGet("Address/New/{id}")]
+        public ActionResult<DeliveryAddress> CreqateDeliveryAddress(int id, string name, string address, string phone)
+        {
+            var deliveryAddress = new DeliveryAddress();
+            deliveryAddress.DeliveryAddressRecipient = name;
+            deliveryAddress.DeliveryAddressAddress = address;
+            deliveryAddress.DeliveryAddressPhone = phone;
+            deliveryAddress.CustomerId = id;
+
+
+            var a = _publicCustomerService.CreateDeliveryAddressByCustomerId(deliveryAddress);
+            return a;
+        }
     }
 }
