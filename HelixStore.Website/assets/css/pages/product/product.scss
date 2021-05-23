@@ -1,0 +1,11 @@
+@import "../../utilities/mixins";
+.content {
+    margin-top: 4rem;
+    width: 100%;
+}
+@include phone {
+    .content {
+        margin: 0;
+        margin-bottom: 4rem;
+    }
+}

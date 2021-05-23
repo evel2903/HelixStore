@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/checkout/checkout.css">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a href="/index.html" class="navbar__logo">HeliX</a>
+
+        <div class="navbar__nav nav">
+
+            <div class="dropdown">
+                <button href="#" class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bx-menu-alt-left dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Products</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./views/products/smartphone.html" class="dropdown__menu__item">
+                        <i class='bx bx-mobile-alt dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartphone</span>
+                    </a>
+                    <a href="./views/products/laptop.html" class="dropdown__menu__item">
+                        <i class='bx bx-laptop  dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Laptop</span>
+                    </a>
+                    <a href="./views/products/tablet.html" class="dropdown__menu__item">
+                        <i class='bx bx-tab dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Tablet</span>
+                    </a>
+                    <a href="./views/products/smartwatch.html" class="dropdown__menu__item">
+                        <i class='bx bxs-watch dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartwatch</span>
+                    </a>
+                    <a href="./views/products/accessories.html" class="dropdown__menu__item">
+                        <i class='bx bx-headphone dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Accessories</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bxs-user dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Account</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./views/account/signup.html" class="dropdown__menu__item" id="signup--link">
+                        <i class='bx bxs-user-plus dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Signup</span>
+                    </a>
+                    <a href="./views/account/login.html" class="dropdown__menu__item" id="login--link">
+                        <i class='bx bxs-log-in dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Login</span>
+                    </a>
+                    <a href="./views/account/profile.html" class="dropdown__menu__item" id="detail--link">
+                        <i class='bx bxs-user-detail dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Profile</span>
+                    </a>
+                    <a class="dropdown__menu__item" id="logout--link">
+                        <i class='bx bxs-log-out dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Logout</span>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <a href="./cart.html" class="nav__link" id="cart--btn">
+                <i class='bx bx-cart-alt nav__link__icon'><span id="cart--amount">0</span></i>
+                <span class="nav__link__text">Cart</span>
+            </a>
+
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="stepByStepForm" class="form">
+            <ul class="progress-bar">
+                <li class="progress-bar__dot full"></li>
+                <li class="progress-bar__connector"></li>
+                <li class="progress-bar__dot"></li>
+                <li class="progress-bar__connector"></li>
+                <li class="progress-bar__dot"></li>
+            </ul>
+
+            <div class="step step1">
+                <div class="input-group">
+                    <label>Select Delivery Address</label>
+                    <select id="delivery--address">
+
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="button" value="New" id="delivery--address--new">
+                </div>
+                <div class="input-group f-new-address" id="f-new-address">
+                    <input type="text" placeholder="Address Recipient" id="new--address--name">
+                    <input type="text" placeholder="Delivery Address" id="new--address--address">
+                    <input type="text" placeholder="Phone Number" id="new--address--phone">
+                    <input type="button" value="Save" id="new--address--save">
+                </div>
+            </div>
+
+            <div class="step step2 hidden" id="f2--product">
+
+            </div>
+
+            <div class="step step3 hidden">
+                <div class="input-group">
+                    <label>Thank you for getting in touch!</label>
+                    <div>
+                        <p>We appreciate you contacting us. One of our colleagues will get back in touch
+                            with you soon!Have a great day!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="previous" class="disabled button" disabled>
+                    previous
+                </button>
+                <button id="next" class="button">
+                    next
+                </button>
+            </div>
+            <div class="button-group">
+                <button id="validate" type="submit" class="hidden button">
+                    Submit
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/pages/checkout.js"></script>
+
+</body>
+
+</html>

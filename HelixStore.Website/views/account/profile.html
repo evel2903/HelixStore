@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix - Account - Signup</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/pages/profile/profile.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" class="navbar__logo">HeliX</a>
+
+        <div class="navbar__nav nav">
+
+            <div class="dropdown">
+                <button href="#" class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bx-menu-alt-left dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Products</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="../products/smartphone.html" class="dropdown__menu__item">
+                        <i class='bx bx-mobile-alt dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartphone</span>
+                    </a>
+                    <a href="../products/laptop.html" class="dropdown__menu__item">
+                        <i class='bx bx-laptop  dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Laptop</span>
+                    </a>
+                    <a href="../products/tablet.html" class="dropdown__menu__item">
+                        <i class='bx bx-tab dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Tablet</span>
+                    </a>
+                    <a href="../products/smartwatch.html" class="dropdown__menu__item">
+                        <i class='bx bxs-watch dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartwatch</span>
+                    </a>
+                    <a href="../products/accessories.html" class="dropdown__menu__item">
+                        <i class='bx bx-headphone dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Accessories</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button href="#" class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bxs-user dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Account</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./signup.html" class="dropdown__menu__item" id="signup--link">
+                        <i class='bx bxs-user-plus dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Signup</span>
+                    </a>
+                    <a href="./login.html" class="dropdown__menu__item" id="login--link">
+                        <i class='bx bxs-log-in dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Login</span>
+                    </a>
+                    <a href="./profile.html" class="dropdown__menu__item" id="detail--link">
+                        <i class='bx bxs-user-detail dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Profile</span>
+                    </a>
+                    <a class="dropdown__menu__item" id="logout--link">
+                        <i class='bx bxs-log-out dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Logout</span>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <a href="../../cart.html" class="nav__link" id="cart--btn">
+                <i class='bx bx-cart-alt nav__link__icon'><span id="cart--amount">0</span></i>
+                <span class="nav__link__text">Cart</span>
+            </a>
+
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="profile">
+            <div class="profile__item">
+                <span>Full Name</span>
+                <p>Lys Xuaan Sang</p>
+            </div>
+            <div class="profile__item">
+                <span>Gender</span>
+                <p>Male</p>
+            </div>
+            <div class="profile__item">
+                <span>Phone Number</span>
+                <p>0979374764</p>
+            </div>
+
+        </div>
+        <div class="orders">
+            <div class="orders__header">
+                <div class="orders__header__item">
+                    <span>Date Create</span>
+                </div>
+                <div class="orders__header__item">
+                    <span>Total Price</span>
+                </div>
+                <div class="orders__header__item">
+                    <span>View</span>
+                </div>
+            </div>
+
+            <div class="orders__content" id="orders__content">
+                <div class="orders__content__item">
+                    <div class="orders__content__item__text">
+                        <span>Date Create</span>
+                    </div>
+                    <div class="orders__content__item__text">
+                        <span>Total Price</span>
+                    </div>
+                    <div class="orders__content__item__button">
+                        <span>View</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="orders__detail__box" id="orders__detail__box">
+        <div class="content">
+            <div class="orders__detail__box__info" id="orders__detail__box__info">
+                <h2>INVOICE</h2>
+
+                <div>
+                    <span>Create Date</span>
+                    <span>2021-05-20 11:09:33.490</span>
+                </div>
+
+                <div>
+                    <span>Customer</span>
+                    <span>Han Diep</span>
+                </div>
+                <div>
+                    <span>Staff</span>
+                    <span>Website User</span>
+                </div>
+
+            </div>
+
+            <div class="table">
+                <div class="table__header">
+                    <div class="table__header__item">
+                        Product Name
+                    </div>
+                    <div class="table__header__item">
+                        Qty
+                    </div>
+                    <div class="table__header__item">
+                        Price
+                    </div>
+                    <div class="table__header__item">
+                        Total
+                    </div>
+                </div>
+
+                <div class="table__content" id="table__content">
+                    <div class="table__content__item">
+                        <div>
+                            Iphone 12
+                        </div>
+                        <div>
+                            1
+                        </div>
+                        <div>
+                            6900000
+                        </div>
+                        <div>
+                            700000
+                        </div>
+                    </div>
+                    <div class="table__content__item">
+                        <div>
+                            Iphone 12
+                        </div>
+                        <div>
+                            1
+                        </div>
+                        <div>
+                            6900000
+                        </div>
+                        <div>
+                            700000
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="address" id="invoice__address">
+                <div>
+                    <span>Recipient</span>
+                    <span>sang</span>
+                </div>
+                <div>
+                    <span>Address</span>
+                    <span>Quan 5</span>
+                </div>
+                <div>
+                    <span>Phone</span>
+                    <span>0000000000</span>
+                </div>
+            </div>
+
+            <div class="money" id="invoice__money">
+                <div>
+                    <span>Provisional Amount</span>
+                    <span>100000</span>
+                </div>
+                <div>
+                    <span>Discount</span>
+                    <span>1000000</span>
+                </div>
+                <div>
+                    <span>Total</span>
+                    <span>100000</span>
+                </div>
+            </div>
+
+            <div id="close__box">
+                <p>X</p>
+            </div>
+
+        </div>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../../assets/js/menu.js"></script>
+
+        <script src="../../assets/js/pages/profile.js"></script>
+
+</body>
+
+</html>

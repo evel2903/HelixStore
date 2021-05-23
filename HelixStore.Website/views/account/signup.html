@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix - Account - Signup</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/pages/account/account.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" class="navbar__logo">HeliX</a>
+
+        <div class="navbar__nav nav">
+
+            <div class="dropdown">
+                <button class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bx-menu-alt-left dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Products</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="../products/smartphone.html" class="dropdown__menu__item">
+                        <i class='bx bx-mobile-alt dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartphone</span>
+                    </a>
+                    <a href="../products/laptop.html" class="dropdown__menu__item">
+                        <i class='bx bx-laptop  dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Laptop</span>
+                    </a>
+                    <a href="../products/tablet.html" class="dropdown__menu__item">
+                        <i class='bx bx-tab dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Tablet</span>
+                    </a>
+                    <a href="../products/smartwatch.html" class="dropdown__menu__item">
+                        <i class='bx bxs-watch dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Smartwatch</span>
+                    </a>
+                    <a href="../products/accessories.html" class="dropdown__menu__item">
+                        <i class='bx bx-headphone dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Accessories</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button href="#" class="dropdown__btn" onclick="showMenu(this)">
+                    <i class='bx bxs-user dropdown__btn__icon'></i>
+                    <span class="dropdown__btn__text">Account</span>
+                </button>
+
+                <div class="dropdown__menu menu--hide">
+                    <a href="./signup.html" class="dropdown__menu__item" id="signup--link">
+                        <i class='bx bxs-user-plus dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Signup</span>
+                    </a>
+                    <a href="./login.html" class="dropdown__menu__item" id="login--link">
+                        <i class='bx bxs-log-in dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Login</span>
+                    </a>
+                    <a href="./profile.html" class="dropdown__menu__item" id="detail--link">
+                        <i class='bx bxs-user-detail dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Profile</span>
+                    </a>
+                    <a class="dropdown__menu__item" id="logout--link">
+                        <i class='bx bxs-log-out dropdown__menu__item__icon'></i>
+                        <span class="dropdown__menu__item__text">Logout</span>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <a href="../../cart.html" class="nav__link" id="cart--btn">
+                <i class='bx bx-cart-alt nav__link__icon'><span id="cart--amount">0</span></i>
+                <span class="nav__link__text">Cart</span>
+            </a>
+
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form login">
+            <div class="form__title">
+                <h2>Signup</h2>
+            </div>
+            <div class="form__item">
+                <i class='bx bxs-user form__item__icon'></i>
+                <input type="text" class="form__item__input" id="fullname" placeholder="Fullname">
+            </div>
+            <div class="form__item gender">
+                <i class='bx bx-male-sign form__item__icon'></i>
+                <input type="checkbox" class="form__item__input" id="gender" placeholder="Phone Number">
+            </div>
+            <div class="form__item">
+                <i class='bx bx-mobile-alt form__item__icon'></i>
+                <input type="text" class="form__item__input" id="phone" placeholder="Phone Number">
+            </div>
+            <div class="form__item control">
+                <input type="submit" class="form__item__control" value="Signup" id="signup">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../assets/js/menu.js"></script>
+
+    <script src="../../assets/js/pages/signup.js"></script>
+
+</body>
+
+</html>

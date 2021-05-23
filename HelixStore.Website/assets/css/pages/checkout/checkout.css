@@ -1,0 +1,230 @@
+/*------------------------------------------------------Color------------------------------------------------------*/
+/*------------------------------------------------------Color End------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint End------------------------------------------------------*/
+.form select, .form input, .form input[type="button"] {
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.form input[type="button"]:hover {
+  background: #fff;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/*------------------------------------------------------Media Queries------------------------------------------------------*/
+/*------------------------------------------------------Media Queries End------------------------------------------------------*/
+/*------------------------------------------------------Color------------------------------------------------------*/
+/*------------------------------------------------------Color End------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint------------------------------------------------------*/
+/*------------------------------------------------------Breakpoint End------------------------------------------------------*/
+.form select, .form input, .form input[type="button"] {
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.form input[type="button"]:hover {
+  background: #fff;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  width: 140px;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 0.2em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #ff8552;
+}
+
+.button:hover {
+  background-color: #ff4f06;
+}
+
+.button.disabled {
+  opacity: 0.5;
+}
+
+.button.disabled:hover {
+  background-color: #ff8552;
+}
+
+.form {
+  width: 60%;
+  margin: auto;
+  margin-top: 5em;
+  padding: 5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: white;
+  font-family: "Raleway", sans-serif;
+  color: #33312e;
+  border-radius: 0.2em;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.form .progress-bar {
+  width: 100%;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 3.5em;
+}
+
+.form .progress-bar li.progress-bar__dot {
+  display: block;
+  width: 0.6em;
+  border-radius: 1000em;
+  height: 0.6em;
+  border: 0.2em solid #ff8552;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form .progress-bar li.progress-bar__dot.full {
+  background-color: #ff8552;
+}
+
+.form .progress-bar li.progress-bar__connector {
+  display: block;
+  width: 5em;
+  border-radius: 1000em;
+  height: 0.1em;
+  background-color: #ff8552;
+  margin-top: 0.45em;
+}
+
+.form label {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.form select {
+  width: 100%;
+  padding: 1.3em;
+  margin-bottom: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 1em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.form select:focus {
+  border: none;
+  outline: none;
+}
+
+.form input {
+  width: 100%;
+  padding: 1.3em;
+  margin-bottom: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 1em;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.form input:focus {
+  border: none;
+  outline: none;
+}
+
+.form input[type="button"] {
+  width: 10rem;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.form input[type="button"]:hover {
+  border-radius: 2rem;
+}
+
+.form input[type="button"]:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form .button-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 50px;
+}
+
+.form button#validate {
+  margin: auto;
+  background-color: #1a936f;
+  width: 12em;
+}
+
+.form button#validate:hover {
+  background-color: #12684e;
+}
+
+.input-group-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #1a936f;
+}
+
+.input-group-total {
+  margin: 1rem;
+  float: right;
+}
+
+.f-new-address {
+  display: none;
+}
+/*# sourceMappingURL=checkout.css.map */
