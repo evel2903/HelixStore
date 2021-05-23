@@ -15,6 +15,31 @@ namespace HelixStore.Business.Customers.Public
             _context = new HelixStoreContext();
         }
 
+        public Customer Login(string phone, string password)
+        {
+            var cus = _context.Customers.FirstOrDefault(c =>  c.CustomerPhone == phone && c.CustomerPassword == CreateMd5(password) );
+            if (cus == null)
+            {
+                return null;
+            }
+            cus.CustomerPassword = "";
+            return cus;
+        }
+
+        public Customer Signup(string fullname, string gender, string phone)
+        {
+            Customer customer = new Customer();
+            customer.CustomerFullname = fullname;
+            customer.CustomerGender = gender;
+            customer.CustomerPhone = phone;
+            customer.CustomerPassword = CreateMd5("123456");
+            customer.RoleId = 2;
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return _context.Customers.ToList().Last();
+        }
+
+
         public Customer Create(Customer customer)
         {
             customer.CustomerPassword = CreateMd5("123456");
@@ -35,7 +60,7 @@ namespace HelixStore.Business.Customers.Public
         {
             var list = _context.DeliveryAddresses.Where(da => da.CustomerId == id).ToList();
 
-            return list == null ? null : list;
+            return list.Count == 0 ? null : list;
         }
 
         public DeliveryAddress GetDeliveryAddressByrId(int id)

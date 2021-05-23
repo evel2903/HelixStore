@@ -14,9 +14,15 @@ namespace HelixStore.Business.Products.Public
         {
             _context = new HelixStoreContext();
         }
+        public List<Product> GetAll()
+        {
+            var prds = _context.Products.ToList();
+
+            return prds.Count == 0 ? null : prds;
+        }
         public Product GetProductById(int product_id)
         {
-            var prd = _context.Products.First(p => p.ProductId == product_id);
+            var prd = _context.Products.FirstOrDefault(p => p.ProductId == product_id);
 
             return prd == null ? null : prd;
         }
@@ -25,7 +31,7 @@ namespace HelixStore.Business.Products.Public
         {
             var prds = _context.Products.Where(p => p.ProductTypeId == type_id).ToList();
 
-            return prds == null ? null : prds;
+            return prds.Count == 0 ? null : prds;
         }
 
         public List<ProductType> GetProductType()

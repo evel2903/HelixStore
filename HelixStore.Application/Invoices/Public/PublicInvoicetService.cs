@@ -55,6 +55,7 @@ namespace HelixStore.Business.Invoices.Public
 
                 rows.Add(invoiceRowReportVM);
             });
+            invoiceReportVM.InvoiceId = id;
 
             invoiceReportVM.InvoiceDate = i.InvoiceDate;
             invoiceReportVM.invoiceRows = rows;
@@ -72,6 +73,18 @@ namespace HelixStore.Business.Invoices.Public
             invoiceReportVM.Total = i.InvoiceTotal;
 
             return invoiceReportVM;
+        }
+
+        public List<InvoiceReportVM> GetInvoiceVMByCusTomerId(int cus_id)
+        {
+            var _i = _context.Invoices.Where(i => i.CustomerId == cus_id).ToList();
+            List<InvoiceReportVM> list = new List<InvoiceReportVM>();
+            _i.ForEach(i =>
+            {
+                list.Add(GetInvoiceReportVM(i.InvoiceId));
+            });
+
+            return list;
         }
     }
 }

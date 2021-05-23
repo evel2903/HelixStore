@@ -289,8 +289,16 @@ namespace HelixStore.WinForm.Forms
         private InvoiceDetail CreateInvoiceDetailByProduct(Product product, int amount)
         {
             var invoiceD = new InvoiceDetail();
-            invoiceD.ProductId = int.Parse(product_id_selected.Text);
-            invoiceD.InvoiceDetailAmount = amount;
+            invoiceD.ProductId = int.Parse(product_id_selected.Text);       
+            if(product.ProductAmount >= amount)
+            {
+                invoiceD.InvoiceDetailAmount = amount;
+            }
+            else
+            {
+                MessageBox.Show("The number of products is not enough, please check the stock !!!");
+                invoiceD.InvoiceDetailAmount = 1;
+            }
             invoiceD.InvoiceDetailTotal = MultiplyMoney(product.ProductPrice, amount);
 
             return invoiceD;
@@ -366,10 +374,20 @@ namespace HelixStore.WinForm.Forms
                 {
                     var product = new PublicProductService().GetProductById(i.ProductId);
 
-                    i.InvoiceDetailAmount = int.Parse(invoice_changeAmount.Text);
-                    i.InvoiceDetailTotal = MultiplyMoney(product.ProductPrice, i.InvoiceDetailAmount);
 
-                    MessageBox.Show(i.InvoiceDetailAmount.ToString());
+                    if (product.ProductAmount >= int.Parse(invoice_changeAmount.Text) && int.Parse(invoice_changeAmount.Text) > 0) 
+                    {
+                        i.InvoiceDetailAmount = int.Parse(invoice_changeAmount.Text);
+                        i.InvoiceDetailTotal = MultiplyMoney(product.ProductPrice, i.InvoiceDetailAmount);
+                    }
+                    else
+                    {
+                        MessageBox.Show("The number of products is not enough, please check the stock !!!");
+                        i.InvoiceDetailAmount = 1;
+                        i.InvoiceDetailTotal = MultiplyMoney(product.ProductPrice, 1);
+                        invoice_changeAmount.Text = "1";
+                    }       
+
                     break;
                 }
             }
