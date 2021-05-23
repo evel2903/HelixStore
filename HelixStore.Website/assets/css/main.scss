@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+* {
+    font-family: "Nunito", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+@import "layout/navigation";
+@import "components/slider";
+@import "components/product";
+@import "components/cart";

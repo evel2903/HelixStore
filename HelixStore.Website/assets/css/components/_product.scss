@@ -1,0 +1,81 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "../utilities/keyframes";
+.product {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__item {
+        position: relative;
+
+        width: 15rem;
+        height: 20rem;
+        @extend %box-shadow;
+
+        animation: flipYIn 700ms ease-in-out 500ms both;
+        transform-style: preserve-3d;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0.5rem 0 0 0.5rem;
+
+            text-transform: uppercase;
+            font-size: large;
+
+            color: #{$flat-gray-4};
+        }
+        &__price {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 0 0 0.5rem 0.5rem;
+
+            font-size: 0.85rem;
+            color: #{$flat-orange-3};
+        }
+        &__addcart {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0 0.5rem 0.5rem 0;
+
+            width: 2.5rem;
+            height: 2.5rem;
+            text-align: center;
+            cursor: pointer;
+
+            transition: all 0.5s;
+
+            border: none;
+            outline: none;
+            @extend %box-shadow;
+
+            &:hover {
+                @extend %box-shadow-inset;
+                border-radius: 2.5rem;
+            }
+            &:active {
+                @extend %box-shadow-border;
+                border-radius: 2.5rem;
+            }
+        }
+    }
+}
